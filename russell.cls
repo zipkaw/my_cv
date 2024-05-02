@@ -253,7 +253,7 @@
 
 % Defines writer's homepage (optional)
 % Usage: \homepage{<url>}
-\newcommand*{\homepage}[1]{\def\@homepage{#1}}
+% \newcommand*{\homepage}[1]{\def\@homepage{#1}}
 
 % Defines writer's github (optional)
 % Usage: \github{<github-nick>}
@@ -262,6 +262,10 @@
 % Defines writer's gitlab (optional)
 % Usage: \gitlab{<gitlab-nick>}
 \newcommand*{\gitlab}[1]{\def\@gitlab{#1}}
+
+% Defines writer's telegram (optional)
+% Usage: \telegram{<telegram-username>}
+\newcommand*{\telegram}[1]{\def\@telegram{#1}}
 
 % Defines writer's bitbucket (optional)
 % Usage: \bitbucket{<bitbucket-nick>}
@@ -481,6 +485,12 @@
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{https://gitlab.com/\@gitlab}{\faGitlab\acvHeaderIconSep\@gitlab}%
+        }%
+      \ifthenelse{\isundefined{\@telegram}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://t.me/\@telegram}{\faTelegram\acvHeaderIconSep\@telegram}%
         }%
       \ifthenelse{\isundefined{\@bitbucket}}%
         {}%
