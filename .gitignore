@@ -1,5 +1,5 @@
 # Created by https://www.gitignore.io/api/vim,latex,emacs
-
+.vscode
 ### Emacs ###
 # -*- mode: gitignore; -*-
 *~
